@@ -1,14 +1,14 @@
 import * as React from 'react';
-const Fragment = React.Fragment;
+import * as classes from './Layout.css';
 
 interface LayoutProps {}
 
 const Layout: React.SFC<LayoutProps> = props => {
   return (
-    <Fragment>
+    <React.Fragment>
       <div>Toolbar, Side, Backdrop</div>
-      <main>{props.children}</main>
-    </Fragment>
+      <main className={classes.Content}>{props.children}</main>
+    </React.Fragment>
   );
 };
 
