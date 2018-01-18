@@ -186,7 +186,7 @@ module.exports = {
                   },
                   use: [
                     {
-                      loader: require.resolve('typings-for-css-modules-loader'),
+                      loader: require.resolve('css-loader'),
                       options: {
                         importLoaders: 1,
                         minimize: true,
