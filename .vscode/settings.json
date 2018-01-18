@@ -1,0 +1,1 @@
+{ "jest.pathToJest": "yarn.cmd run test" }
