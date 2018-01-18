@@ -6,7 +6,7 @@ interface BurgerIngredientProps {
 }
 
 const BurgerIngredient: React.SFC<BurgerIngredientProps> = props => {
-  let ingredient?: JSX.Element = null;
+  let ingredient: JSX.Element | null = null;
   switch (props.type) {
     case 'bread-bottom':
       ingredient = <div className={classes.BreadBottom} />;
@@ -23,7 +23,7 @@ const BurgerIngredient: React.SFC<BurgerIngredientProps> = props => {
       ingredient = <div className={classes.Meat} />;
       break;
     case 'cheese':
-      ingredient = <div className={classes.cheese} />;
+      ingredient = <div className={classes.Cheese} />;
       break;
     case 'salad':
       ingredient = <div className={classes.Salad} />;
