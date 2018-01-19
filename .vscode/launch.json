@@ -1,0 +1,19 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Launch Chrome",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "name": "node",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}/node-express-backend/app.js",
+      "cwd": "${workspaceRoot}/node-express-backend"
+    }
+  ]
+}
