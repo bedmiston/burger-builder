@@ -70,6 +70,7 @@ class BurgerBuilder extends React.Component<BurgerBuilderProps> {
           ingredientAdded={this.addIngredientHandler}
           ingredientRemoved={this.removeIngredientHandler}
           disabled={disabledInfo}
+          price={this.state.totalPrice}
         />
       </React.Fragment>
     );
