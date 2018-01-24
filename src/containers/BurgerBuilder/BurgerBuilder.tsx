@@ -84,6 +84,10 @@ class BurgerBuilder extends React.Component<BurgerBuilderProps> {
     this.setState({ purchasing: false });
   };
 
+  purchaseContinueHandler = () => {
+    alert('You continue!');
+  };
+
   render() {
     const disabledInfo = { ...this.state.ingredients };
     // tslint:disable-next-line:forin
@@ -97,7 +101,11 @@ class BurgerBuilder extends React.Component<BurgerBuilderProps> {
           show={this.state.purchasing}
           modalClosed={this.purchaseCancelledHandler}
         >
-          <OrderSummary ingredients={this.state.ingredients} />
+          <OrderSummary
+            ingredients={this.state.ingredients}
+            purchaseCancelled={this.purchaseCancelledHandler}
+            purchaseContinued={this.purchaseContinueHandler}
+          />
         </Modal>
         <Burger ingredients={this.state.ingredients} />
         <BuildControls
