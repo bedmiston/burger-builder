@@ -22,7 +22,8 @@ class BurgerBuilder extends React.Component<BurgerBuilderProps> {
       meat: 0
     },
     totalPrice: 4,
-    purchaseable: false
+    purchaseable: false,
+    purchasing: false
   };
 
   updatePurchaseState = (ingredients: object) => {
@@ -75,6 +76,10 @@ class BurgerBuilder extends React.Component<BurgerBuilderProps> {
     this.updatePurchaseState(updatedIngredients);
   };
 
+  purchaseHandler = () => {
+    this.setState({ purchasing: true });
+  };
+
   render() {
     const disabledInfo = { ...this.state.ingredients };
     // tslint:disable-next-line:forin
@@ -84,7 +89,7 @@ class BurgerBuilder extends React.Component<BurgerBuilderProps> {
 
     return (
       <React.Fragment>
-        <Modal>
+        <Modal show={this.state.purchasing}>
           <OrderSummary ingredients={this.state.ingredients} />
         </Modal>
         <Burger ingredients={this.state.ingredients} />
@@ -93,6 +98,7 @@ class BurgerBuilder extends React.Component<BurgerBuilderProps> {
           ingredientRemoved={this.removeIngredientHandler}
           purchaseable={this.state.purchaseable}
           disabled={disabledInfo}
+          ordered={this.purchaseHandler}
           price={this.state.totalPrice}
         />
       </React.Fragment>

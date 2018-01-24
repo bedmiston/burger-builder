@@ -15,6 +15,7 @@ interface BuildControlsProps {
   disabled: object;
   price: number;
   purchaseable: boolean;
+  ordered: () => void;
 }
 
 const BuildControls: React.SFC<BuildControlsProps> = (props) => (
@@ -31,7 +32,11 @@ const BuildControls: React.SFC<BuildControlsProps> = (props) => (
         disabled={props.disabled[ctrl.type]}
       />
     ))}
-    <button className={styles.OrderButton} disabled={!props.purchaseable}>
+    <button
+      className={styles.OrderButton}
+      disabled={!props.purchaseable}
+      onClick={props.ordered}
+    >
       ORDER NOW
     </button>
   </div>
