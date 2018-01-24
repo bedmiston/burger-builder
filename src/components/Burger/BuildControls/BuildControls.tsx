@@ -14,6 +14,7 @@ interface BuildControlsProps {
   ingredientRemoved: (type: string) => void;
   disabled: object;
   price: number;
+  purchaseable: boolean;
 }
 
 const BuildControls: React.SFC<BuildControlsProps> = (props) => (
@@ -30,6 +31,9 @@ const BuildControls: React.SFC<BuildControlsProps> = (props) => (
         disabled={props.disabled[ctrl.type]}
       />
     ))}
+    <button className={styles.OrderButton} disabled={!props.purchaseable}>
+      ORDER NOW
+    </button>
   </div>
 );
 
