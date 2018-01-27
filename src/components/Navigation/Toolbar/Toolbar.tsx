@@ -12,7 +12,9 @@ const Toolbar: React.SFC<ToolbarProps> = (props) => {
       <div className={styles.Logo}>
         <Logo />
       </div>
-      <NavigationItems />
+      <nav className={styles.DesktopOnly}>
+        <NavigationItems />
+      </nav>
     </header>
   );
 };
