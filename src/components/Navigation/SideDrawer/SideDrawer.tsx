@@ -1,8 +1,10 @@
 import * as React from 'react';
+
 import Logo from '../../Logo/Logo';
+import Backdrop from '../../UI/Backdrop/Backdrop';
 import NavigationItems from '../NavigationItems/NavigationItems';
 import * as styles from './SideDrawer.css';
-import Backdrop from '../../UI/Backdrop/Backdrop';
+
 interface SideDrawerProps {
   open: boolean;
   closed: () => void;

@@ -1,6 +1,7 @@
 import * as React from 'react';
-import * as styles from './Modal.css';
+
 import Backdrop from '../Backdrop/Backdrop';
+import * as styles from './Modal.css';
 
 interface ModalProps {
   show: boolean;

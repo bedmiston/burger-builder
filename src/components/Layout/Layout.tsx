@@ -1,7 +1,8 @@
 import * as React from 'react';
-import * as classes from './Layout.css';
-import Toolbar from '../Navigation/Toolbar/Toolbar';
+
 import SideDrawer from '../Navigation/SideDrawer/SideDrawer';
+import Toolbar from '../Navigation/Toolbar/Toolbar';
+import * as classes from './Layout.css';
 
 export interface LayoutProps {}
 

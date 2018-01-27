@@ -1,7 +1,8 @@
 import * as React from 'react';
-import * as styles from './Toolbar.css';
+
 import Logo from '../../Logo/Logo';
 import NavigationItems from '../NavigationItems/NavigationItems';
+import * as styles from './Toolbar.css';
 
 interface ToolbarProps {}
 

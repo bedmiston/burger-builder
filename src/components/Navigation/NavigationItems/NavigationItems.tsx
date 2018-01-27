@@ -1,6 +1,7 @@
 import * as React from 'react';
-import * as styles from './NavigationItems.css';
+
 import NavigationItem from './NavigationItem/NavigationItem';
+import * as styles from './NavigationItems.css';
 
 interface NavigationItemsProps {}
 
