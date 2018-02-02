@@ -4,6 +4,7 @@ import BuildControls from '../../components/Burger/BuildControls/BuildControls';
 import Burger from '../../components/Burger/Burger';
 import OrderSummary from '../../components/Burger/OrderSummary/OrderSummary';
 import Modal from '../../components/UI/Modal/Modal';
+import axios from '../../axios-orders';
 
 export interface BurgerBuilderProps {}
 
@@ -86,7 +87,32 @@ class BurgerBuilder extends React.Component<BurgerBuilderProps> {
   };
 
   purchaseContinueHandler = () => {
-    alert('You continue!');
+    // alert('You continue!');
+    const order = {
+      ingredients: this.state.ingredients,
+      price: this.state.totalPrice,
+      customer: {
+        mane: 'Max S.',
+        address: {
+          street: 'Test street 1',
+          city: 'Anchorage',
+          country: 'USA'
+        },
+        email: 'email@test.com'
+      },
+      deliveryMethod: 'Fastest'
+    };
+
+    axios
+      .post('/orders.json', order)
+      .then((response) => {
+        // tslint:disable-next-line
+        console.log(response);
+      })
+      .catch((error) => {
+        // tslint:disable-next-line
+        console.log(error);
+      });
   };
 
   render() {
