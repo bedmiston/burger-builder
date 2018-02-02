@@ -6,11 +6,16 @@ import * as styles from './Modal.css';
 interface ModalProps {
   show: boolean;
   modalClosed: () => void;
+  // tslint:disable-next-line
+  children?: any;
 }
 
 class Modal extends React.Component<ModalProps> {
   shouldComponentUpdate(nextProps: ModalProps, nextState: ModalProps) {
-    return nextProps.show !== this.props.show;
+    return (
+      nextProps.show !== this.props.show ||
+      nextProps.children !== this.props.children
+    );
   }
 
   render() {
