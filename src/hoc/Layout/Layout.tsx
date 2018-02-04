@@ -2,7 +2,11 @@ import * as React from 'react';
 
 import SideDrawer from '../../components/Navigation/SideDrawer/SideDrawer';
 import Toolbar from '../../components/Navigation/Toolbar/Toolbar';
-import * as classes from './Layout.css';
+import styled from 'styled-components';
+
+const StyledMain = styled.main`
+  margin-top: 72px;
+`;
 
 export interface LayoutProps {}
 
@@ -28,7 +32,7 @@ class Layout extends React.Component<LayoutProps> {
           closed={this.sideDrawerClosedHandler}
           open={this.state.showSideDrawer}
         />
-        <main className={classes.Content}>{this.props.children}</main>
+        <StyledMain>{this.props.children}</StyledMain>
       </React.Fragment>
     );
   }
