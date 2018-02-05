@@ -1,25 +1,19 @@
 import * as React from 'react';
 
 import styled from 'styled-components';
-import styledComponentsTS from 'styled-components-ts';
 
-interface StyledButtonProps {
-  success?: boolean;
-  danger?: boolean;
-}
-
-const StyledButton = styledComponentsTS<StyledButtonProps>(styled.button)`
+const StyledButton = styled.button`
   background-color: transparent;
   border: none;
-  color: ${props => {
-    if (props.success) {
+  color: ${(props: { btnType?: string }) => {
+    if (props.btnType === 'Success') {
       return '#5c9210';
-    } else if (props.danger) {
+    } else if (props.btnType === 'Danger') {
       return '#944317';
     } else {
       return 'white';
     }
-  }}
+  }};
   outline: none;
   cursor: pointer;
   font: inherit;
