@@ -9,7 +9,7 @@ interface StyledImageProps {
 const StyledButton = styled<StyledImageProps, 'button'>('button')`
   background-color: transparent;
   border: none;
-  color: ${(props: { btnType?: string }) => {
+  color: ${props => {
     if (props.btnType === 'Success') {
       return '#5c9210';
     } else if (props.btnType === 'Danger') {

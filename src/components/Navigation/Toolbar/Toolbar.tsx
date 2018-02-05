@@ -3,23 +3,53 @@ import * as React from 'react';
 import DrawerToggle from '../SideDrawer/DrawerToggle/DrawerToggle';
 import Logo from '../../Logo/Logo';
 import NavigationItems from '../NavigationItems/NavigationItems';
-import * as styles from './Toolbar.css';
+import styled from 'react-emotion';
+
+const StyledNav = styled('nav')`
+  height: 100%;
+  @media (max-width: 499px) {
+    display: none;
+  }
+`;
+
+const StyledHeader = styled('header')`
+  height: 56px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #703b09;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+  z-index: 90;
+
+  nav & {
+    height: 100%;
+  }
+`;
+
+const StyledLogoDiv = styled('div')`
+  height: 80%;
+`;
 
 interface ToolbarProps {
   drawerToggleClicked: () => void;
 }
 
-const Toolbar: React.SFC<ToolbarProps> = (props) => {
+const Toolbar: React.SFC<ToolbarProps> = props => {
   return (
-    <header className={styles.Toolbar}>
+    <StyledHeader>
       <DrawerToggle clicked={props.drawerToggleClicked} />
-      <div className={styles.Logo}>
+      <StyledLogoDiv>
         <Logo />
-      </div>
-      <nav className={styles.DesktopOnly}>
+      </StyledLogoDiv>
+      <StyledNav>
         <NavigationItems />
-      </nav>
-    </header>
+      </StyledNav>
+    </StyledHeader>
   );
 };
 
