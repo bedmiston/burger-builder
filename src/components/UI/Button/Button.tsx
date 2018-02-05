@@ -1,8 +1,12 @@
 import * as React from 'react';
 
-import styled from 'styled-components';
+import styled from 'react-emotion';
 
-const StyledButton = styled.button`
+interface StyledImageProps {
+  btnType?: string;
+}
+
+const StyledButton = styled<StyledImageProps, 'button'>('button')`
   background-color: transparent;
   border: none;
   color: ${(props: { btnType?: string }) => {
@@ -33,7 +37,11 @@ interface ButtonProps {
 }
 
 const Button: React.SFC<ButtonProps> = props => {
-  return <StyledButton onClick={props.clicked}>{props.children}</StyledButton>;
+  return (
+    <StyledButton btnType={props.btnType} onClick={props.clicked}>
+      {props.children}
+    </StyledButton>
+  );
 };
 
 export default Button;

@@ -2,9 +2,9 @@ import * as React from 'react';
 
 import SideDrawer from '../../components/Navigation/SideDrawer/SideDrawer';
 import Toolbar from '../../components/Navigation/Toolbar/Toolbar';
-import styled from 'styled-components';
+import styled from 'react-emotion';
 
-const StyledMain = styled.main`
+const StyledMain = styled('main')`
   margin-top: 72px;
 `;
 

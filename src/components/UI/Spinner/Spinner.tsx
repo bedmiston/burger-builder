@@ -1,6 +1,6 @@
 import * as React from 'react';
 // import * as styles from './Spinner.css';
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes } from 'react-emotion';
 
 const load1 = keyframes`
   0%,
@@ -15,7 +15,7 @@ const load1 = keyframes`
   }
 `;
 
-const StyledDiv = styled.div`
+const StyledDiv = styled('div')`
   background: #521751;
   -webkit-animation: ${load1} 1s infinite ease-in-out;
   animation: ${load1} 1s infinite ease-in-out;

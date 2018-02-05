@@ -1,8 +1,8 @@
 import * as React from 'react';
 
-import styled from 'styled-components';
+import styled from 'react-emotion';
 
-const StyledDiv = styled.div`
+const StyledDiv = styled('div')`
   width: 100%;
   height: 100%;
   position: fixed;
