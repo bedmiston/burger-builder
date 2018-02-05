@@ -5,6 +5,7 @@ import Burger from '../../components/Burger/Burger';
 import OrderSummary from '../../components/Burger/OrderSummary/OrderSummary';
 import Modal from '../../components/UI/Modal/Modal';
 import Spinner from '../../components/UI/Spinner/Spinner';
+import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
 import axios from '../../axios-orders';
 
 export interface BurgerBuilderProps {}
@@ -32,7 +33,7 @@ class BurgerBuilder extends React.Component<BurgerBuilderProps> {
 
   updatePurchaseState = (ingredients: object) => {
     const sum = Object.keys(ingredients)
-      .map((igKey) => {
+      .map(igKey => {
         return ingredients[igKey];
       })
       .reduce((total, el) => {
@@ -108,10 +109,10 @@ class BurgerBuilder extends React.Component<BurgerBuilderProps> {
 
     axios
       .post('/orders.json', order)
-      .then((response) => {
+      .then(response => {
         this.setState({ loading: false, purchasing: false });
       })
-      .catch((error) => {
+      .catch(error => {
         this.setState({ loading: false, purchasing: false });
       });
   };
@@ -158,4 +159,4 @@ class BurgerBuilder extends React.Component<BurgerBuilderProps> {
   }
 }
 
-export default BurgerBuilder;
+export default withErrorHandler(BurgerBuilder, axios);
