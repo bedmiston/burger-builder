@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import Backdrop from '../Backdrop/Backdrop';
-import styled from 'react-emotion';
+import styled from 'styled-components';
 
 const StyledDiv = styled('div')`
   position: fixed;

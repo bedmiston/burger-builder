@@ -3,7 +3,7 @@ import * as React from 'react';
 import DrawerToggle from '../SideDrawer/DrawerToggle/DrawerToggle';
 import Logo from '../../Logo/Logo';
 import NavigationItems from '../NavigationItems/NavigationItems';
-import styled from 'react-emotion';
+import styled from 'styled-components';
 
 const StyledNav = styled('nav')`
   height: 100%;

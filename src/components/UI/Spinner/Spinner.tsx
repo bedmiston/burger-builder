@@ -1,6 +1,6 @@
 import * as React from 'react';
 // import * as styles from './Spinner.css';
-import styled, { keyframes } from 'react-emotion';
+import styled, { keyframes } from 'styled-components';
 
 const load1 = keyframes`
   0%,
