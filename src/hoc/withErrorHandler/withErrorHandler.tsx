@@ -2,10 +2,11 @@ import * as React from 'react';
 import Modal from '../../components/UI/Modal/Modal';
 import { AxiosInstance } from 'axios';
 
-// tslint:disable-next-line:no-any
-const withErrorHandler = (WrappedComponent: any, axios: AxiosInstance) => {
-  // tslint:disable-next-line:no-any
-  return class extends React.Component {
+export default function withErrorHandler<P = {}>(
+  WrappedComponent: React.ComponentType<P>,
+  axios: AxiosInstance
+): React.ComponentClass<P> {
+  return class extends React.Component<P> {
     state = {
       error: {
         message: ''
@@ -44,6 +45,4 @@ const withErrorHandler = (WrappedComponent: any, axios: AxiosInstance) => {
       );
     }
   };
-};
-
-export default withErrorHandler;
+}
