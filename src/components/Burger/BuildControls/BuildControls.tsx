@@ -11,15 +11,14 @@ const controls = [
 ];
 
 const enable = keyframes`
-  0%,
-  80%,
-  100% {
-    box-shadow: 0 0;
-    height: 4em;
+  0% {
+    transform: scale(1);
   }
-  40% {
-    box-shadow: 0 -2em;
-    height: 5em;
+  60% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
   }
 `;
 
