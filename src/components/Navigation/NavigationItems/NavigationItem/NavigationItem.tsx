@@ -1,7 +1,7 @@
 import * as React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-const StyleListItem = styled('li')`
+const StyledListItem = styled('li')`
   margin: 10px 0;
   box-sizing: border-box;
   display: block;
@@ -20,6 +20,11 @@ interface StyledLinkProps {
   active: boolean;
 }
 
+const activeStyles = `
+  background-color: #8f5c2c;
+  border-bottom: 4px solid #40a4c8;
+`;
+
 const StyledLink = styled<StyledLinkProps, 'a'>('a')`
   color: ${props => (props.active ? '#40a4c8' : '#8f5c2c')};
   text-decoration: none;
@@ -37,9 +42,15 @@ const StyledLink = styled<StyledLinkProps, 'a'>('a')`
     padding: 16px 10px;
     border-bottom: 4px solid transparent;
 
+    ${props =>
+      props.active
+        ? css`
+            ${activeStyles};
+          `
+        : ''};
+
     &:hover {
-      background-color: #8f5c2c;
-      border-bottom: 4px solid #40a4c8;
+      ${activeStyles};
     }
   }
 `;
@@ -50,11 +61,11 @@ interface NavigationItemProps {
 }
 
 const NavigationItem: React.SFC<NavigationItemProps> = props => (
-  <StyleListItem>
+  <StyledListItem>
     <StyledLink href={props.link} active={props.active}>
       {props.children}
     </StyledLink>
-  </StyleListItem>
+  </StyledListItem>
 );
 
 export default NavigationItem;
