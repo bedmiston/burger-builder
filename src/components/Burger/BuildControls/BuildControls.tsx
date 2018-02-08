@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import BuildControl from './BuildControl/BuildControl';
-import styled, { keyframes } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
 const controls = [
   { label: 'Salad', type: 'salad' },
@@ -49,11 +49,15 @@ const OrderButton = styled<OrderButtonProps, 'div'>('div')`
   box-shadow: 2px 2px 2px #966909;
   animation: ${props => (!props.disabled ? enable + ' 0.3s linear' : '')};
 
-  &:hover,
-  &:active {
-    background-color: #a0db41;
-    border: 1px solid #966909;
-    color: #966909;
+  &:hover {
+    ${props =>
+      !props.disabled
+        ? css`
+            background-color: #a0db41;
+            border: 1px solid #966909;
+            color: #966909;
+          `
+        : ''};
   }
 `;
 
